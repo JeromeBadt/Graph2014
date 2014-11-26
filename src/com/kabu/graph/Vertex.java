@@ -19,12 +19,6 @@ public class Vertex {
 
 	private List<VertexChangeListener> vertexChangeListeners = new ArrayList<VertexChangeListener>();
 
-	/*
-	 * The following attributes are cloned attributes. We don't clone edgeList
-	 * because relations between vertices are cloned by the
-	 * graph.clone()-method.
-	 */
-
 	public Vertex() {
 	}
 
@@ -70,7 +64,8 @@ public class Vertex {
 
 	/**
 	 * Klonen einer Ecke. Hierbei wird eine neue, isolierte Ecke erstellt, die
-	 * das gleiche Label erhält wie die ursprüngliche Ecke.
+	 * das gleiche Label erhält wie die ursprüngliche Ecke. Die edgeList wird
+	 * nicht geklont, da sie von der Graph.clone() Methode geklont wird.
 	 */
 	protected Object clone() { // throws CloneNotSupportedException
 		Vertex vertex = new Vertex(label);
