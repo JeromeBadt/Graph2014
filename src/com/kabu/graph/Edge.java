@@ -110,7 +110,9 @@ public class Edge {
 		return toString(0);
 	}
 
-	// Darstellung der Kante als String mit vorwählbarem Einzug
+	/**
+	 * Darstellung der Kante als String mit vorwählbarem Einzug.
+	 */
 	public String toString(int inset) {
 		StringBuilder insetBuf = new StringBuilder();
 		StringBuilder buf = new StringBuilder();

@@ -34,12 +34,16 @@ public class Graph {
 	public Graph() {
 	}
 
-	// Festellen, ob sich die gegebene Ecke in der Eckenmenge befindet
+	/**
+	 * Festellen, ob sich die gegebene Ecke in der Eckenmenge befindet.
+	 */
 	public boolean contains(Vertex vertex) {
 		return vertices.contains(vertex);
 	}
 
-	// Festellen, ob sich die gegebene Kante in der Kantenmenge befindet
+	/**
+	 * Festellen, ob sich die gegebene Kante in der Kantenmenge befindet.
+	 */
 	public boolean contains(Edge edge) {
 		return edges.contains(edge);
 	}
@@ -105,7 +109,9 @@ public class Graph {
 		return edges;
 	}
 
-	// Auslesen sämtlicher Kanten von "from" nach "to".
+	/**
+	 * Auslesen sämtlicher Kanten von "from" nach "to".
+	 */
 	public List<Edge> getEdges(Vertex from, Vertex to) {
 		List<Edge> result = new ArrayList<Edge>();
 
@@ -295,7 +301,9 @@ public class Graph {
 		verticesChangeListeners.remove(listener);
 	}
 
-	// Sämtliche VerticesChangeListeners benachrichtigen
+	/**
+	 * Sämtliche VerticesChangeListeners benachrichtigen.
+	 */
 	protected void verticesChanged(VerticesChangeEvent e) {
 		List<VerticesChangeListener> listeners = null;
 
@@ -319,7 +327,9 @@ public class Graph {
 		edgeSetChangeListeners.remove(listener);
 	}
 
-	// Sämtliche EdgeSetChangeListener benachrichtigen
+	/**
+	 * Sämtliche EdgeSetChangeListener benachrichtigen.
+	 */
 	public void edgeSetChanged(EdgeSetChangeEvent e) {
 		List<EdgeSetChangeListener> listeners = null;
 
@@ -342,7 +352,9 @@ public class Graph {
 		return toString(0);
 	}
 
-	// Darstellung des Graphen als String mit vorwählbarem Einzug
+	/**
+	 * Darstellung des Graphen als String mit vorwählbarem Einzug.
+	 */
 	public String toString(int inset) {
 		StringBuilder insetBuf = new StringBuilder();
 		StringBuilder buf = new StringBuilder();

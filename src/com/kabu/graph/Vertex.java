@@ -88,7 +88,9 @@ public class Vertex {
 		vertexChangeListeners.remove(listener);
 	}
 
-	// Sämtliche VertexChangeListeners benachrichtigen
+	/**
+	 * Sämtliche VertexChangeListeners benachrichtigen.
+	 */
 	protected void vertexChanged(VertexChangeEvent e) {
 		List<VertexChangeListener> listeners = null;
 
@@ -111,7 +113,9 @@ public class Vertex {
 		return toString(0);
 	}
 
-	// Darstellung der Ecke als String mit vorwählbarem Einzug
+	/**
+	 * Darstellung der Ecke als String mit vorwählbarem Einzug.
+	 */
 	public String toString(int inset) {
 
 		StringBuilder insetBuf = new StringBuilder();
@@ -132,10 +136,8 @@ public class Vertex {
 		buf.append(insetString + "\t");
 		buf.append("(edges\n");
 
-		/*
-		 * Only show the edge labels instead of the whole edge.toString() to
-		 * avoid recursion!
-		 */
+		// Only show the edge labels instead of the whole edge.toString() to
+		// avoid recursion!
 		StringBuilder edgeBuf = new StringBuilder();
 
 		for (Edge edge : edgeList) {
