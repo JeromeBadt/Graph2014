@@ -27,13 +27,13 @@ public class Vertex {
 	}
 
 	public List<Vertex> getNeighbours() {
-		List<Vertex> adj = new ArrayList<Vertex>();
+		List<Vertex> neighbours = new ArrayList<Vertex>();
 
 		for (Edge edge : edgeList) {
-			adj.add(edge.getHead());
+			neighbours.add(edge.getHead());
 		}
 
-		return adj;
+		return neighbours;
 	}
 
 	public void setLabel(String label) {
