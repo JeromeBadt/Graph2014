@@ -3,6 +3,7 @@ package com.kabu.graph.algorithm;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.kabu.graph.Graph;
@@ -51,7 +52,15 @@ public class DepthSearch extends GraphAlgorithm {
 
 		path.add(vertex);
 
-		for (Vertex nb : vertex.getNeighbours()) {
+		List<Vertex> neighbours = vertex.getNeighbours();
+
+		// Ausgabe der Ecken ungeraden Grades
+		if (neighbours.size() % 2 != 0) {
+			System.out.println("Ecke " + vertex.getLabel()
+					+ " ist ungeraden Grades. Grad=" + neighbours.size());
+		}
+
+		for (Vertex nb : neighbours) {
 			// Wenn wir den Nachbarn noch nicht besucht haben, dann tun wir dies
 			// jetzt
 			if (!visited.contains(nb)) {
@@ -85,7 +94,6 @@ public class DepthSearch extends GraphAlgorithm {
 
 		for (Vertex vertex : getGraph().getVertices()) {
 			path = new ArrayDeque<Vertex>();
-	
 
 			if (!visited.contains(vertex)) {
 				Vertex result = visit(visited, vertex);
